@@ -1,0 +1,6 @@
+<li>
+	<%= gist.escape("title")%>
+	<button data-id="<%= gist.id %>" class="<%= gist.get('favorites').length > 0 ? 'favorite' : 'not-favorite' %>">
+		<%= gist.get('favorites').length > 0 ? "Unfavorite" : "Favorite" %>
+	</button>
+</li>
