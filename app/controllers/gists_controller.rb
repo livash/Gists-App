@@ -6,4 +6,13 @@ class GistsController < ApplicationController
     render json: @gists, :include => :favorites
   end
 
+  def create
+    debugger
+    @gist = current_user.gists.create(params[:gist])
+    if @gist
+      render :json => @gist
+    else
+      render :json => @gist.errors, :status => 422
+    end
+  end
 end

@@ -6,7 +6,8 @@ SessionsTemplate.Routers.Gists = Backbone.Router.extend({
 	},
 
 	routes: {
-		"": "index"
+		"": "index",
+		"gists/new": "new"
 	},
 
 	index: function() {
@@ -14,6 +15,11 @@ SessionsTemplate.Routers.Gists = Backbone.Router.extend({
 		var view = new SessionsTemplate.Views.GistsIndex();
 		view.collection = this.gists;
 		this.$rootEl.html(view.render().$el);
+	},
+
+	new: function() {
+		var formView = new SessionsTemplate.Views.GistForm();
+		this.$rootEl.html(formView.render().$el);
 	}
 
 });

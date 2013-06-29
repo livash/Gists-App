@@ -10,6 +10,8 @@ SessionsTemplate.Views.GistsIndex = Backbone.View.extend({
 	render: function() {
 		var that = this;
 		that.$el.html('');
+		var renderedTemplate = this.template();
+		that.$el.append(renderedTemplate);
 		this.collection.each(function(gist) {
 			var detailView = new SessionsTemplate.Views.GistDetail();
 			detailView.model = gist;
