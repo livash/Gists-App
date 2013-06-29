@@ -7,5 +7,9 @@ class Gist < ActiveRecord::Base
   has_many :favorites
   has_many :likers,
   :through => :favorites,
-   :source => :user
+  :source => :user
+
+  has_many :gist_files
+
+
 end

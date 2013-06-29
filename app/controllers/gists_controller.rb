@@ -3,7 +3,7 @@ class GistsController < ApplicationController
 
   def index
     @gists = current_user.gists
-    render json: @gists, :include => :favorites
+    render json: @gists, :include => [:favorites, :gist_files]
   end
 
   def create
